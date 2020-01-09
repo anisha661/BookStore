@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html LANG="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: common-header" />
+<body>
+	<div th:replace="common/header :: navbar"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 ">
+				<div th:if="${emptylist}">
+					<h5>NO result is found.</h5>
+				</div>
+
+				<table  id="listOfBook">
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="book-item " data-th-each="book : ${listOfBook}">
+							<td>
+								<div th:if="${book != null}">
+									<div class="row">
+										<div class="col-lg-4 col-md-4 col-sm-12">
+											<a th:href="@{/bookdetail?id=}+${book.id}"><img
+												class="img-fluid"
+												th:src="@{/images/book/}+${book.id}+'.png'" /></a>
+										</div>
+
+										<div class="col-lg-8 col-md-8 col-sm-12 ">
+											<a th:href="@{/bookdetail?id=} +${book.id}"><h4 th:text="${book.title}"></h4></a> <span
+												th:text="${book.author}"></span> <span
+												th:text="${book.publicationDate}"></span> <span
+												th:text="${#strings.capitalize(book.author)}"></span> <span
+												style="font-size: x-large; color: #db3208;"><span
+												th:text="${#numbers.formatDecimal(book.ourPrice,0,'COMMA',2,'POINT')}"></span></span>
+											<span style="text-decoration: line-through;"><span
+												th:text="${#numbers.formatDecimal(book.listPrice,0,'COMMA',2,'POINT')}"></span></span>
+											<p th:utext="${#strings.abbreviate(book.description,500)}"></p>
+										</div>
+									</div>
+
+								</div>
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+	</div>
+	<div th:replace="common/header :: footer"></div>
+</body>
+</html>

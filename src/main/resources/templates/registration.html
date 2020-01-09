@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: common-header">
+
+<body>
+<div class="container">
+		<div class="row">
+			<div class="col-md-5 mx-auto">
+
+				
+					<div class="myform form ">
+						<div class="logo mb-3">
+							<div class="col-md-12 text-center">
+								<h2>Signup</h2>
+							</div>
+						</div>
+						
+						<div th:if="${emailSent}" class="alert alert-success"  role="alert" th:text=${emailSent}></div>
+						<form  id="register" th:action="@{/signup}" th:object="${user}" method="post">
+							<div class="form-group">
+							
+								<label for="name">Full name</label> <input type="text"
+									name="name" class="form-control" id="name-input"
+									placeholder="Enter fullname" required>
+								<div id="name-feedback"></div>
+									
+							</div>
+
+							<div class="form-group">
+								<label for="email">Email address</label> <input type="email"
+									name="email" class="form-control" id="email-input"
+									placeholder="Enter email" required>
+								<span id="email-feedback"></span>	
+								<div th:if="${emailExists}">Email already exists. Choose a different one</div>
+								
+							</div>
+							
+							
+							<div class="form-group">
+								<label for="username">Username</label> <input type="text"
+									name="username" class="form-control" id="username-input"
+									placeholder="Enter username" required>
+								<span id="username-feedback"></span>	
+							<div  th:if="${usernameExists}">Username already exists. Choose a different one</div>
+									
+							</div>
+
+							<div class="form-group">
+								<label for="password">Password</label> <input type="password"
+									name="password" id="password-input" class="form-control"
+									placeholder="Enter Password" required>
+							<span id="password-feedback"></span>
+							</div>
+
+							<div class="form-group">
+								<label for="confirmPassword">Confirm Password</label> <input
+									type="password" name="confirmpassword" id="password-confirm-input"
+									class="form-control" placeholder="Enter Password" required>
+									
+			                     <div id="msg">
+			                    </div>
+								
+							</div>
+							<div class="form-group">
+								<button type="submit" id ="sign-up" class="btn btn-lg btn-block mybtn">SignUp</button>
+							</div>
+
+							<div class="form-group">
+								<p class="text-center">
+									<a href="/login" id="signin">Already have an account?</a>
+								</p>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+<div th:replace="common/header ::footer"></div>
+	
+</body>
+</html>

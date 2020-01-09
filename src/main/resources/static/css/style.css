@@ -1,0 +1,103 @@
+body {
+	overflow-x: hidden;
+	font-family: 'Lato', sans-serif;
+}
+
+.container {
+	margin-top: 2.5rem;
+	font-size: 19px;
+	min-height: 100vh; /* will cover the 100% of viewport */
+	overflow: hidden;
+	display: block;
+	position: relative;
+	padding-bottom: 100px;
+}
+
+.container-fluid {
+	margin-top: 6.5rem;
+	font-size: 19px;
+	min-height: 100vh;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	padding-bottom: 100px;
+}
+
+.navbar {
+	background-color: rgba(153, 150, 235, .6) ! important;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: .1rem;
+}
+
+.navbar-nav li {
+	padding-right: .7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+	padding-top: .8 rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: #4b74db;
+}
+
+.carousel-item {
+	height: 100vh;
+}
+
+.footer {
+	flex-shrink: 0;
+	color: white;
+	background-color: #0b8a9f;
+	text-align: center;
+	padding: 30px;
+}
+
+<!--
+form css -->a {
+	text-decoration: none !important;
+}
+
+.myform {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 2rem;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 1.1rem;
+	box-shadow: 10px 10px 8px #d3cad5;
+	outline: 0;
+	max-width: 500px;
+}
+
+.mybtn {
+	color: white;
+	background: rgba(153, 150, 235, .8);
+	text-transform: uppercase;
+}
+
+form .error {
+	color: #ff0000;
+}
+
+.error {
+	color: red;
+	margin-left: 5px;
+}
+
+label.error {
+	display: inline;
+}
+
+.hidden {
+	display: none;
+}

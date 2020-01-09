@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html LANG="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: common-header" />
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+
+	<div id="home">
+	<div th:replace="common/header :: navbar"></div>
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-ride="carousel" data-interval="7000">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active"
+					style="background-image: url(images/two.jpg);">
+					<div class="carousel-caption text-center">
+						<h1>Welcome to bookstore</h1>
+						<a class="btn btn-outline-light btn-lg" href="/login">GET
+							STARTED</a>
+					</div>
+
+				</div>
+				<div class="carousel-item"
+					style="background-image: url(images/one.jpg);"></div>
+				<div class="carousel-item "
+					style="background-image: url(images/three.jpg);"></div>
+
+			</div>
+			<a class="carousel-control-prev" href="carouselExampleIndicators"
+				role="button" data-slide="prev"> <span
+				class="carousel-control-prev-icon" aria-hidden="true"></span>
+			</a> <a class="carousel-control-next" href="carouselExampleIndicators"
+				role="button" data-slide="next"> <span
+				class="carousel-control-next-icon" aria-hidden="true"></span>
+			</a>
+
+		</div>
+	</div>
+	<!--End of home section-->
+
+	<!--Start og bookstore section-->
+	<div id="books">
+		<div class="col-12 text-center">
+			<h3 class="heading">Latest updates</h3>
+			<div class="heading-underline"></div>
+		</div>
+		<div class="row padding">
+			<div class="col-md-4">
+				<div class="card text-center">
+					<img class="card-img-top" src="images/book/1.jpg">
+					<div class="card-body">
+						<h4>Somethng</h4>
+						<p>loremjnfjnvjnvjindsjvnjdvhdvjnjdsvnjvnjdsnvjbjvjdvjvjks</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card text-center">
+					<img class="card-img-top" src="images/book/1.jpg">
+					<div class="card-body">
+						<h4>Somethng</h4>
+						<p>loremjnfjnvjnvjindsjvnjdvhdvjnjdsvnjvnjdsnvjbjvjdvjvjks</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card text-center">
+					<img class="card-img-top" src="images/book/1.jpg">
+					<div class="card-body">
+						<h4>Somethng</h4>
+						<p>loremjnfjnvjnvjindsjvnjdvhdvjnjdsvnjvnjdsnvjbjvjdvjvjks</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+	<!--End of bookstore section-->
+
+	<div id="about"></div>
+
+	<div id="contact"></div>
+
+	<div th:replace="common/header :: footer"></div>
+</body>
+</html>

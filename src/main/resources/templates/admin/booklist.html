@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/dashboard :: header" />
+
+<body>
+	<div th:replace="admin/dashboard :: navbar"></div>
+	<div class="container">
+		<div class="table-responsive">
+			<table id="booklistTable"
+				class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Category</th>
+						<th>List price</th>
+						<th>Our price</th>
+						<th>Active</th>
+						<th>operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-th-each="book : ${booklist}">
+				<!--<td><input hidden="hidden" name="id" th:value="${book.id}" /></td>  -->		
+						<td ><a th:href="@{/bookinfo?id=}+${book.id}"><span th:text="${book.title}"></span></a></td>
+						<td th:text="${book.author}"></td>
+						<td th:text="${book.category}"></td>
+						<td th:text="${book.listPrice}"></td>
+						<td th:text="${book.ourPrice}"></td>
+						<td th:text="${book.active}"></td>
+						<td><a href="#" class="btn btn-primary">Update</a> <a
+							href="#" class="btn btn-danger">Delete</a></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<script >
+	$(document).ready( function () {
+	    $('#booklistTable').DataTable();
+	});
+	</script>
+</body>
+</html>
